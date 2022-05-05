@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
   <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <title>vue-boolzap</title>
 </head>
 <body>
@@ -15,17 +16,66 @@
     <!-- contenitore background -->
     <div class="background-container">
 
-      <div class="background-top debug"></div>
+      <div class="background-top"></div>
       <div class="background-main"></div>
       
     </div>
     
     <div class="chat-container debug">
-
-      <div class="messages-container debug">shesffshsfj</div>
-      <div class="selected-chat-container debug">sgsgg</div>
-
-
+      <!-- LEFT COL -->
+      <div class="messages-container">
+        <div class="messages-top">
+          <div class="user-info">
+            <img src="img/avatar_io.jpg" alt="">
+            <p>Sofia</p>
+          </div>
+          <div class="icons">
+            <i class="fa-solid fa-circle-notch"></i>
+            <i class="fa-solid fa-message"></i>
+            <i class="fa-solid fa-ellipsis-vertical"></i>
+          </div>
+        </div>
+        <div class="get-notifications">
+          <i class="fa-solid fa-bell-slash"></i>
+          <div class="text-wrapper">
+            <p>Ricevi notifiche di nuovi messaggi</p>
+            <p>Attiva notifiche desktop</p>
+          </div>
+        </div>
+        <div class="searchbar">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" placeholder="Cerca o inizia una nuova chat">
+        </div>
+        <div class="all-chats">lorem600</div>
+      </div>
+      <!-- RIGHT COL -->
+      <div class="selected-chat-container">
+        <div class="selected-chat-top">
+          <div class="user-info">
+            <img src="img/avatar_1.jpg" alt="">
+            <div class="text-wrapper">
+              <p>Michele</p>
+              <p>Ultimo accesso oggi alle 12:00</p>
+            </div>
+           
+          </div>
+          <div class="icons">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <i class="fa-solid fa-paperclip"></i>
+            <i class="fa-solid fa-ellipsis-vertical"></i>
+          </div>
+        </div>
+        <div class="current-chat">lorem1000</div>
+        <div class="selected-chat-btm">
+          <div class="emoticon">
+            <i class="fa-solid fa-face-smile"></i>
+          </div>
+          <input placeholder="Scrivi un messaggio" type="text">
+          <div class="record-msg">
+            <i class="fa-solid fa-microphone"></i>
+          </div>
+        </div>
+      </div>
     </div>
 
 
