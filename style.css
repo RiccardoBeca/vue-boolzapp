@@ -1,0 +1,43 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.debug {
+  background-color: rgba(95, 158, 160, .5);
+  border:1px solid black;
+  min-height: 100px;
+}
+
+.background-container {
+  position: relative;
+}
+
+.background-main {
+  height: 100%;
+}
+
+.chat-container {
+  width: 80%;
+  height: 800px;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+
+.messages-container {
+  /* float: left; */
+  
+}
+
+
+.selected-chat-container {
+  float: left;
+
+}
