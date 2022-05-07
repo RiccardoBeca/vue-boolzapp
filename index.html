@@ -13,13 +13,13 @@
 
   <div id="app">
 
-    <!-- contenitore background -->
+    <!-- contenitore background
     <div class="background-container">
 
       <div class="background-top"></div>
       
     </div>
-    
+     -->
     <div class="chat-container">
       <!-- LEFT COL -->
       <div class="messages-container">
@@ -46,75 +46,20 @@
           <input type="text" placeholder="Cerca o inizia una nuova chat">
         </div>
         <div class="all-chats">
-          <div class="contact-chat-card">
-              <img src="img/avatar_1.jpg" alt="">
+          <div v-for="(contact, index) in contacts" class="contact-chat-card">
+            <img :src="`img/avatar${contact.avatar}.jpg`" :alt="contact.name">
             <div class="text-wrapper">
-              <p> Michele</p>
+              <p>{{contact.name}}</p>
               <p>Ultimo messaggio inviato</p>
             </div>
             <span>12:00</span>
           </div>
-          <div class="contact-chat-card">
-            <div class="user-info">
-              <img src="img/avatar_1.jpg" alt="">
-            </div>
-            <div class="text-wrapper">
-              <p> Michele</p>
-              <p>Ultimo messaggio inviato</p>
-            </div>
-          </div>
-          <div class="contact-chat-card">
-            <div class="user-info">
-              <img src="img/avatar_1.jpg" alt="">
-            </div>
-            <div class="text-wrapper">
-              <p> Michele</p>
-              <p>Ultimo messaggio inviato</p>
-            </div>
-          </div>
-          <div class="contact-chat-card">
-            <div class="user-info">
-              <img src="img/avatar_1.jpg" alt="">
-            </div>
-            <div class="text-wrapper">
-              <p> Michele</p>
-              <p>Ultimo messaggio inviato</p>
-            </div>
-          </div>
-          <div class="contact-chat-card">
-            <div class="user-info">
-              <img src="img/avatar_1.jpg" alt="">
-            </div>
-            <div class="text-wrapper">
-              <p> Michele</p>
-              <p>Ultimo messaggio inviato</p>
-            </div>
-          </div>
-          <div class="contact-chat-card">
-            <div class="user-info">
-              <img src="img/avatar_1.jpg" alt="">
-            </div>
-            <div class="text-wrapper">
-              <p> Michele</p>
-              <p>Ultimo messaggio inviato</p>
-            </div>
-          </div>
-          <div class="contact-chat-card">
-            <div class="user-info">
-              <img src="img/avatar_1.jpg" alt="">
-            </div>
-            <div class="text-wrapper">
-              <p> Michele</p>
-              <p>Ultimo messaggio inviato</p>
-            </div>
-          </div>
-          
         </div>
       </div>
       <!-- RIGHT COL -->
       <div class="selected-chat-container">
         <div class="selected-chat-top">
-           <div class="user-info">
+          <div class="user-info">
             <img src="img/avatar_1.jpg" alt="">
             <div class="text-wrapper">
               <p>Michele</p>
@@ -128,22 +73,25 @@
           </div>
         </div>
         <div class="current-chat">
-          <div class="mymessage-box">
-            <p>ciao come va?</p>
+          <div class="message-wrapper">
+            <div class="message sent">
+              <p>ciao come va?lorem40</p>
+            </div>
+            <div class="message received">
+              <p>tutto bene tu?</p>
+            </div>
           </div>
-          <div class="contact-message-box">
-            <p>tutto bene tu?</p>
+          <div class="selected-chat-btm">
+            <div class="emoticon">
+              <i class="fa-regular fa-face-smile"></i>
+            </div>
+            <input placeholder="Scrivi un messaggio" type="text">
+            <div class="record-msg">
+              <i class="fa-solid fa-microphone"></i>
+            </div>
           </div>
         </div>
-        <div class="selected-chat-btm">
-          <div class="emoticon">
-            <i class="fa-regular fa-face-smile"></i>
-          </div>
-          <input placeholder="Scrivi un messaggio" type="text">
-          <div class="record-msg">
-            <i class="fa-solid fa-microphone"></i>
-          </div>
-        </div>
+          
       </div>
     </div>
 

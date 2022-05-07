@@ -7,7 +7,7 @@ const app=  new Vue({
 
     data:{
 
-        contatti: [
+        contacts: [
             {
                 name: 'Michele',
                 avatar: '_1',
