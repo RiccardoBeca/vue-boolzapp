@@ -46,7 +46,11 @@
           <input type="text" placeholder="Cerca o inizia una nuova chat">
         </div>
         <div class="all-chats">
-          <div v-for="(contact, index) in contacts" class="contact-chat-card">
+          <div
+           v-for="(contact, index) in contacts"
+           @click="activeContact = index"
+           :class="{'active' : activeContact === index}"
+            class="contact-chat-card">
             <img :src="`img/avatar${contact.avatar}.jpg`" :alt="contact.name">
             <div class="text-wrapper">
               <p>{{contact.name}}</p>
@@ -74,11 +78,11 @@
         </div>
         <div class="current-chat">
           <div class="message-wrapper">
-            <div class="message sent">
-              <p>ciao come va?lorem40</p>
-            </div>
-            <div class="message received">
-              <p>tutto bene tu?</p>
+            <div 
+            v-for="messaggio in contacts[activeContact].messages"
+            :class="messaggio.status"
+            class="message">
+              <p>{{messaggio.message}}</p>
             </div>
           </div>
           <div class="selected-chat-btm">
