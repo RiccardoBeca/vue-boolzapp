@@ -192,7 +192,8 @@ const app=  new Vue({
             }
         ],
         activeContact: 0,
-        nuovoMessaggio:''
+        nuovoMessaggio:'',
+        searchContact:''
     },
     methods: {
 
@@ -237,7 +238,14 @@ const app=  new Vue({
                 status: 'received',
             }
             this.mandaMessaggio(contact, message)
-        }
+        },
+
+        // isContact(contact, index) {
+        //   if (contact.includes(this.searchContact)) {
+        //       console.log("ok");
+        //   } 
+        // }
+
 
 
     },

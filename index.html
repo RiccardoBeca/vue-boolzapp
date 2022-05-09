@@ -41,9 +41,13 @@
             <p>Attiva notifiche desktop</p>
           </div>
         </div>
+        <!-- SEARCHBAR -->
         <div class="searchbar">
           <i class="fa-solid fa-magnifying-glass"></i>
-          <input type="text" placeholder="Cerca o inizia una nuova chat">
+          <input 
+          v-model.trim="searchContact"
+          @keyup.enter="isContact(contact)"
+          type="text" placeholder="Cerca o inizia una nuova chat">
         </div>
         <div class="all-chats">
           <div
