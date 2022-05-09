@@ -54,9 +54,9 @@
             <img :src="`img/avatar${contact.avatar}.jpg`" :alt="contact.name">
             <div class="text-wrapper">
               <p>{{contact.name}}</p>
-              <p>Ultimo messaggio inviato</p>
+              <p>{{ultimoMessaggioInviato(index)}}</p>
             </div>
-            <span>12:00</span>
+            <span>{{dataUltimoMessaggioInviato(index)}}</span>
           </div>
         </div>
       </div>
@@ -89,7 +89,10 @@
             <div class="emoticon">
               <i class="fa-regular fa-face-smile"></i>
             </div>
-            <input placeholder="Scrivi un messaggio" type="text">
+            <input
+            v-model.trim="nuovoMessaggio"
+            @keyup.enter="mandaNuovoMessaggio"
+             placeholder="Scrivi un messaggio" type="text">
             <div class="record-msg">
               <i class="fa-solid fa-microphone"></i>
             </div>

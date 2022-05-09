@@ -192,12 +192,54 @@ const app=  new Vue({
             }
         ],
         activeContact: 0,
+        nuovoMessaggio:''
     },
     methods: {
-        log(activeContact){
-            
-            console.log(this.activeContact)
+
+        // funzione per avere l'ultimo messaggio. associo delle costanti ai vari parametri/proprieta' degli array
+        ultimoMessaggioInviato(index) {
+            const contact = this.contacts[index];
+            const messages = contact.messages;
+            const ultimoMessaggio = messages[messages.length - 1];
+            return ultimoMessaggio.message
         },
+        // stesso concetto della funzione precedente, cambio semplicemente il return richedendo il valore date dalla proprieta' 'date'
+        dataUltimoMessaggioInviato(index) {
+            const contact = this.contacts[index];
+            const messages = contact.messages;
+            const ultimoMessaggio = messages[messages.length - 1];
+            return ultimoMessaggio.date
+        },
+
+        // con mandaMessaggio pusho dentro l'array messaggi il nuovo messaggio
+        mandaMessaggio(target, message) {
+            target.messages.push(message)
+        },
+
+        mandaNuovoMessaggio() {
+            const contact = this.contacts[this.activeContact];
+            const nuovoMessaggio = {
+                date: 'xxxxxxx',
+                message: this.nuovoMessaggio,
+                status: 'sent',
+            }
+            this.mandaMessaggio(contact, nuovoMessaggio),
+            this.nuovoMessaggio='';
+            setTimeout(()=>{
+                this.rispostaAutomatica(contact);
+            },1000)
+        },
+        // funzione per una risposta automatica  che vado a richiamare poi con un timeout dentro 'mandaNuovoMessaggio'
+        rispostaAutomatica(contact) {
+            const message = {
+                date: 'xxxxxxx',
+                message: 'ok',
+                status: 'received',
+            }
+            this.mandaMessaggio(contact, message)
+        }
+
+
     },
 })
 
